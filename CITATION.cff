@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "Please cite the published paper when using the ASSESS methodology or comparison. Identify the software version separately for reproducibility."
+type: software
+title: "ASSESS: Analysis of Side-channel Security through Enhanced pre-Silicon Simulations"
+url: "https://github.com/abolfazlsajadi/ASSESS"
+repository-code: "https://github.com/abolfazlsajadi/ASSESS"
+abstract: "Original pre-silicon leakage-analysis research code, with an additive replay of the paper's published runtime results."
+keywords:
+  - pre-silicon leakage analysis
+  - side-channel analysis
+  - gate-level analysis
+  - RISC-V
+  - AES
+authors:
+  - family-names: Sajadi
+    given-names: Abolfazl
+    orcid: "https://orcid.org/0000-0003-0657-7022"
+  - family-names: Zidaric
+    given-names: Nusa
+  - family-names: Stefanov
+    given-names: Todor
+  - family-names: Mentens
+    given-names: Nele
+preferred-citation:
+  type: conference-paper
+  title: "Systematic Comparison and Improvement of Pre-silicon Leakage Analysis Tools"
+  authors:
+    - family-names: Sajadi
+      given-names: Abolfazl
+    - family-names: Zidaric
+      given-names: Nusa
+    - family-names: Stefanov
+      given-names: Todor
+    - family-names: Mentens
+      given-names: Nele
+  collection-title: "Proceedings of the 23rd ACM International Conference on Computing Frontiers: Workshops and Special Sessions"
+  year: 2026
+  month: 5
+  start: 38
+  end: 48
+  doi: "10.1145/3801488.3807896"
+  url: "https://doi.org/10.1145/3801488.3807896"

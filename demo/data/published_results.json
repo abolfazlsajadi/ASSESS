@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "kind": "published_results_replay",
+  "paper": {
+    "title": "Systematic Comparison and Improvement of Pre-silicon Leakage Analysis Tools",
+    "authors": ["Abolfazl Sajadi", "Nusa Zidaric", "Todor Stefanov", "Nele Mentens"],
+    "year": 2026,
+    "doi": "10.1145/3801488.3807896",
+    "url": "https://doi.org/10.1145/3801488.3807896",
+    "source_pdf_sha256": "ee56cd5ade7decfb86cc886488d2538638b3037cb02688e80812c84b5f27ac74"
+  },
+  "provenance": {
+    "transcription_date": "2026-09-24",
+    "method": "Manual transcription of Tables 5 and 6, checked against both PDF text extraction and rendered complete pages.",
+    "display_policy": "Preserve published values and units. Normalize spacing only. Preserve em dashes and the approximation sign. C_i is a plain-text rendering of the paper's mathematical subscript.",
+    "missing_value_policy": "An em dash means the table reports no value in that cell. It is never interpreted as zero.",
+    "calculation_policy": "Do not sum component rows to replace published totals; do not derive new speedup factors. Convert each published end-to-end duration to seconds only to position its marker on the chart.",
+    "scope": "This is a faithful replay of published runtime tables, not a fresh execution of the ASSESS analysis or a reproduction from raw traces. No leakage rankings, LIF values, power measurements, CPA or TVLA results are generated."
+  },
+  "benchmarks": [
+    {"id": "ibex", "label": "Ibex", "traces": 600},
+    {"id": "aes_coprocessor", "label": "AES coprocessor", "traces": 1500}
+  ],
+  "tables": [
+    {
+      "number": 5,
+      "method": "ACA",
+      "caption": "ACA runtime breakdown for the Ibex and AES coprocessor.",
+      "pdf_page": 8,
+      "proceedings_page": 45,
+      "rows": [
+        {"phase": "Sim.", "step": "Vmem generation", "ibex": {"per_trace": "141 ms", "total": "1 m 24 s"}, "aes_coprocessor": {"per_trace": "—", "total": "—"}},
+        {"phase": "Sim.", "step": "Synthesis (once)", "ibex": {"per_trace": "—", "total": "5 m 53 s"}, "aes_coprocessor": {"per_trace": "—", "total": "36 m 9 s"}},
+        {"phase": "Sim.", "step": "VCD dump", "ibex": {"per_trace": "6.32 s", "total": "1 h 3 m"}, "aes_coprocessor": {"per_trace": "3 s", "total": "1 h 15 m"}},
+        {"phase": "Pwr. Est.", "step": "Power extraction", "ibex": {"per_trace": "2 h 55 m", "total": "72 d 15 h"}, "aes_coprocessor": {"per_trace": "18 s", "total": "7 h 30 m"}},
+        {"phase": "Pwr. Est.", "step": "Power analysis (HD)", "ibex": {"per_trace": "—", "total": "13 s"}, "aes_coprocessor": {"per_trace": "—", "total": "10 s"}},
+        {"phase": "Pwr. Est.", "step": "VCD parsing", "ibex": {"per_trace": "2.5 s", "total": "25 m"}, "aes_coprocessor": {"per_trace": "3.47 it/s", "total": "7 m 12 s"}},
+        {"phase": "Pwr. Est.", "step": "Per-gate power scan (Joules)", "ibex": {"per_trace": "—", "total": "19 s"}, "aes_coprocessor": {"per_trace": "—", "total": "2 m 49 s"}},
+        {"phase": "Lkg.A.", "step": "Net-list parsing & LIF", "ibex": {"per_trace": "40 nets/s", "total": "3 m 28 s"}, "aes_coprocessor": {"per_trace": "12.5 nets/s", "total": "50 m 12 s"}}
+      ],
+      "end_to_end": {"ibex": "72 d 15 h 31 m", "aes_coprocessor": "10 h 22 m"}
+    },
+    {
+      "number": 6,
+      "method": "ASSESS",
+      "caption": "ASSESS end-to-end runtime on Ibex and on the AES coprocessor.",
+      "pdf_page": 10,
+      "proceedings_page": 47,
+      "rows": [
+        {"phase": "Sim.", "step": "Vmem gen. (shared)", "ibex": {"per_trace": "141 ms", "total": "1 m 24 s"}, "aes_coprocessor": {"per_trace": "—", "total": "—"}},
+        {"phase": "Sim.", "step": "Synthesis (once)", "ibex": {"per_trace": "—", "total": "5 m 53 s"}, "aes_coprocessor": {"per_trace": "—", "total": "36 m 9 s"}},
+        {"phase": "Sim.", "step": "VCD dump", "ibex": {"per_trace": "6.3 s", "total": "1 h 3 m"}, "aes_coprocessor": {"per_trace": "3 s", "total": "1 h 15 m"}},
+        {"phase": "Pwr. Est.", "step": "Step 1: Peak localisation", "ibex": {"per_trace": "3.3 s", "total": "33 m 6 s"}, "aes_coprocessor": {"per_trace": "—", "total": "—"}},
+        {"phase": "Pwr. Est.", "step": "Step 2: Cycle-accurate VCD parser", "ibex": {"per_trace": "56.4 it/s", "total": "2 m 28 s"}, "aes_coprocessor": {"per_trace": "10.4 it/s", "total": "2 m 24 s"}},
+        {"phase": "Pwr. Est.", "step": "Per-gate power scan", "ibex": {"per_trace": "—", "total": "19 s"}, "aes_coprocessor": {"per_trace": "—", "total": "2 m 49 s"}},
+        {"phase": "Pwr. Est.", "step": "Calculate C_i", "ibex": {"per_trace": "—", "total": "3 m 31 s"}, "aes_coprocessor": {"per_trace": "480 it/s", "total": "1 m 18 s"}},
+        {"phase": "Lkg.A.", "step": "Net-list parsing & LIF", "ibex": {"per_trace": "40 nets/s", "total": "3 m 28 s"}, "aes_coprocessor": {"per_trace": "12.5 nets/s", "total": "50 m 12 s"}}
+      ],
+      "end_to_end": {"ibex": "1 h 53 m 9 s", "aes_coprocessor": "≈ 2 h 42 m"}
+    }
+  ]
+}
